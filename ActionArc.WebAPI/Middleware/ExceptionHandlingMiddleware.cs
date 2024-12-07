@@ -19,7 +19,7 @@ class ExceptionHandlingMiddleware(ILogger<ExceptionHandlingMiddleware> _logger) 
 
 		var response = JsonSerializer.Serialize(details);
 
-		httpContext.Response.ContentType = "application/json";
+		httpContext.Response.ContentType = "application/problem+json";
 
 		await httpContext.Response.WriteAsync(response, cancellationToken);
 

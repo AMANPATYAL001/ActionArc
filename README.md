@@ -8,7 +8,7 @@
 ' | Scalar | Swagger
 | :--- | ---: | :---:
 Live <small>(Dev tunnel)</small> | <a href="https://t6105b8p-7108.inc1.devtunnels.ms/scalar/v1" target="_blank">Live</a> | <a href="https://t6105b8p-7108.inc1.devtunnels.ms/swagger" target="_blank">Live</a>
-Localhost  | `https://localhost:7108/scalar/v1` | `https://localhost:7108/swagger`
+Localhost  | <small>`https://localhost:7108/scalar/v1`</small> | <small>`https://localhost:7108/swagger`</small>
 
 
 
@@ -34,3 +34,14 @@ This app may not change the world, but it’ll definitely help you learn some im
 #### 4. **PUT /todo/Update**
 #### 5. **DELETE /todo/Delete?id=1**
 #### 6. **GET /todo/DownloadCSV**
+
+
+### Additional Stuff
+
+- CSV download feature
+- Unit Test (XUnit Test)
+- Deployed using Visual studio Dev tunnel
+- Link for API (Scalar and Swagger)
+- Global Exception handling
+- In-Memory DB (Entity core)
+- 6 Seeded Todos
