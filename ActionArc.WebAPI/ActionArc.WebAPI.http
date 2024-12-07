@@ -1,0 +1,6 @@
+@ActionArc.WebAPI_HostAddress = http://localhost:5272
+
+GET {{ActionArc.WebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
