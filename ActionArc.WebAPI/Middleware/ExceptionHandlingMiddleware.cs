@@ -10,10 +10,10 @@ class ExceptionHandlingMiddleware(ILogger<ExceptionHandlingMiddleware> _logger) 
 
 		var details = new ProblemDetails
 		{
-			Detail = "",
-			Instance = "API",
-			Title = "",
-			Type = "",
+			Detail = exception.Message,
+			Instance = httpContext.Request.Path,
+			Title = exception.Message,
+			Type = exception.HelpLink,
 			Status = httpContext.Response.StatusCode,
 		};
 

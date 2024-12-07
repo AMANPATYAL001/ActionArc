@@ -1,4 +1,4 @@
-
+﻿
 using ActionArc.Application;
 using ActionArc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
@@ -32,13 +32,16 @@ namespace ActionArc
 			// Configure the HTTP request pipeline.
 			if (app.Environment.IsDevelopment())
 			{
+				var devTunnelURL = app.Services.GetRequiredService<IConfiguration>()["DevTunnelURL"];
+				var localURL = app.Services.GetRequiredService<IConfiguration>()["LocalURL"];
+
 				app.MapOpenApi();
 				app.MapScalarApiReference(opt =>
 				{
 					opt
-					.AddServer(new ScalarServer(Url: "https://t6105b8p-7108.inc1.devtunnels.ms/", "For Deployment"))
-					.AddServer(new ScalarServer(Url: "https://localhost:7108/", "For Local"))
-					.WithTitle("Aman")
+					.AddServer(new ScalarServer(Url: devTunnelURL, "For Deployment"))
+					.AddServer(new ScalarServer(Url: localURL, "For Local"))
+					.WithTitle("Action Arc 🎬")
 					.WithDefaultHttpClient(ScalarTarget.CSharp, ScalarClient.HttpClient)
 					.WithModels(false)
 					.WithTheme(ScalarTheme.BluePlanet);
